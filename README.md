@@ -21,7 +21,20 @@ to bottom.
 - **Text → video** — type a prompt, get a ~6-second clip (`CogVideoX-2B`).
 - **Image → video** — animate a still, including a frame pulled from *your own*
   video (`Stable Video Diffusion`).
+- **Video → video** — upload your clip; it keeps *your* motion and composition
+  and re-renders the look from a prompt (`CogVideoX-2B`, `strength` dial). This
+  is the "same motion, new render" path, and object placement comes from your
+  real frames, not the model's guess.
+- **Direct it scene by scene** — continue from the last frame with a new prompt
+  (`CogVideoX-5B-I2V`), then stitch the chain into one video.
 - **Upscale to 1080p** and optionally **smooth to 30fps** (ffmpeg).
+
+### What it still can't do (honest)
+These free models don't *track* objects — they predict pixels. Short, simple
+motion holds together; busy scenes, occlusions, small details, hands and text
+will morph or fade in/out. Video→video and image→video are steadier (they start
+from real frames). A true "watch my whole video and remake it perfectly" needs
+a bigger model on a real GPU.
 
 ## Honest limits
 
